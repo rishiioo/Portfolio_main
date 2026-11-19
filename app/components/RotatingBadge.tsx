@@ -9,7 +9,7 @@ export default function RotatingBadge({ link }: { link: string }) {
     href={link}
     target="_blank"
     rel="noopener noreferrer"
-    className="relative w-[120px] h-[120px] block cursor-pointer"
+    className="relative w-[100px] sm:w-[110px] md:w-[120px] h-[100px] sm:h-[110px] md:h-[120px] block cursor-pointer"
   >
     {/* ROTATING TEXT */}
     <motion.div
@@ -25,7 +25,7 @@ export default function RotatingBadge({ link }: { link: string }) {
           />
         </defs>
 
-        <text fill="white" fontSize="14" letterSpacing="2">
+        <text fill="white" fontSize="12" letterSpacing="2" style={{ fontSize: "12px" }}>
           <textPath href="#circlePath">
             VISIT PROJECT • VISIT PROJECT •
           </textPath>
@@ -35,7 +35,7 @@ export default function RotatingBadge({ link }: { link: string }) {
 
     {/* CENTER BUTTON */}
     <div className="absolute inset-0 flex items-center justify-center">
-      <div className="w-[50px] h-[50px] rounded-full bg-white text-black flex items-center justify-center text-lg font-bold hover:scale-110 transition">
+      <div className="w-[40px] sm:w-[45px] md:w-[50px] h-[40px] sm:h-[45px] md:h-[50px] rounded-full bg-white text-black flex items-center justify-center text-base sm:text-lg font-bold hover:scale-110 transition">
         →
       </div>
     </div>

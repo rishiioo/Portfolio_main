@@ -11,7 +11,7 @@ import { TbBrandRadixUi } from "react-icons/tb";
 import { RiReactjsLine } from "react-icons/ri"; 
 import { Playfair_Display } from "next/font/google";
 
-import { SiTypescript, SiSupabase } from "react-icons/si";
+import { SiTypescript, SiSupabase, SiNodedotjs, SiMongodb, SiGooglegemini, SiVercel, SiRender, SiHtml5, SiCss, SiJavascript, SiFirebase } from "react-icons/si";
 const playfair = Playfair_Display({
   subsets: ["latin"],
   style: ["italic"],
@@ -21,29 +21,29 @@ const playfair = Playfair_Display({
 const projects = [
   {
     id: 1,
-    title: " CodeStruct",
-    link: "https://codestruct.vercel.app/",
-    desc: "CodeStruct is a full-stack web application designed to help users learn Data Structures and Algorithms through interactive visualizations. It allows users to write and test code in a real-time playground environment. The platform offers curated practice problems with automated evaluation and detailed solutions. It also includes user authentication and progress tracking features. Overall, CodeStruct provides an engaging and effective platform for mastering DSA concepts.",
+    title: " Postmark",
+    link: "https://github.com/rishiioo/Postmark",
+    desc: "Postmark is a full-stack AI email management application for personal assistants. It uses Next.js, Express.js, MongoDB Atlas, and the Gemini LLM. The frontend is deployed on Vercel and the backend on Render, with a CORS issue between the two services resolved through environment-based configuration. Developed as an interview assessment project and recorded a demo video walking through the working application.",
     gradient: "from-red-500 to-red-700",
-     images: [
+    images: [
       "/projects/codestruct2.png",
       "/projects/Codestruct1.jpg",
       "/projects/codestruct3.png",
     ],
     tech: [
-  { name: "React", icon: <FaReact className="text-blue-400" /> },
-  { name: "TypeScript", icon: <SiTypescript className="text-blue-500" /> },
-  { name: "Next.js", icon: <SiNextdotjs /> },
-  { name: "Tailwind", icon: <SiTailwindcss className="text-cyan-400" /> },
-  { name: "Framer Motion", icon: <SiFramer className="text-pink-400" /> },
-  { name: "Supabase", icon: <SiSupabase className="text-green-400" /> },
-]
+      { name: "Next.js", icon: <SiNextdotjs /> },
+      { name: "Express.js", icon: <SiNodedotjs className="text-green-500" /> },
+      { name: "MongoDB Atlas", icon: <SiMongodb className="text-green-400" /> },
+      { name: "Gemini LLM", icon: <SiGooglegemini className="text-blue-400" /> },
+      { name: "Vercel", icon: <SiVercel /> },
+      { name: "Render", icon: <SiRender className="text-purple-400" /> },
+    ],
   },
   {
     id: 2,
-    title: " SnapURL",
-    link: "https://snapurl-short.vercel.app/",
-    desc: "SnapURL is a modern web application that shortens long URLs into compact, shareable links. It includes an analytics dashboard to track clicks and link performance. The platform is fully responsive and supports both light and dark modes for better user experience. It is built using Next.js, React, and Tailwind CSS with smooth animations. Overall, SnapURL provides a fast, efficient, and visually appealing URL shortening solution.",
+    title: " AttendX",
+    link: "https://github.com/rishiioo/ATTENDX",
+    desc: "AttendX is a web-based attendance management system built with HTML, CSS, JavaScript, and Firebase. It features role-based student, teacher, and admin-facing interfaces to support distinct user workflows. Presented as the developed project in a coding competition and received a participation certificate.",
     gradient: "from-blue-500 to-blue-700",
     images: [
       "/projects/Snapurl1.png",
@@ -51,31 +51,11 @@ const projects = [
       "/projects/Snapurl3.png",
     ],
     tech: [
-  { name: "Next.js", icon: <SiNextdotjs /> },
-  { name: "React", icon: <FaReact className="text-blue-400" /> },
-  { name: "Tailwind", icon: <SiTailwindcss className="text-cyan-400" /> },
-  { name: "Framer", icon: <SiFramer className="text-pink-400" /> },
-  { name: "Radix", icon: <TbBrandRadixUi /> },
-  { name: "Recharts", icon: <AiOutlineBarChart /> },
-  { name: "Hook Form", icon: <RiReactjsLine /> },
-  { name: "Zod", icon: <SiZod /> },
-]
-  },
-  {
-    id: 3,
-    title: " CVForge",
-    link: "https://cvforge-web.netlify.app/",
-    desc: "CVForge is a web-based resume builder that allows users to create professional resumes quickly and easily. It provides a live editor where users can customize their resume in real time based on their requirements. The platform is built using ReactJS and Chakra UI for a clean and responsive interface. It also supports features like printing and exporting resumes using React-To-Print.",
-    gradient: "from-yellow-500 to-orange-500",
-     images: [
-      "/projects/cvforge1.png",
-      "/projects/cvforge2.png",
-      "/projects/cvforge3.png",
+      { name: "HTML5", icon: <SiHtml5 className="text-orange-500" /> },
+      { name: "CSS3", icon: <SiCss className="text-blue-400" /> },
+      { name: "JavaScript", icon: <SiJavascript className="text-yellow-400" /> },
+      { name: "Firebase", icon: <SiFirebase className="text-yellow-500" /> },
     ],
-    tech: [
-  { name: "React", icon: <FaReact className="text-blue-400" /> },
-  { name: "Chakra UI", icon: <SiChakraui className="text-teal-400" /> },
-]
   },
 ];
 
@@ -85,7 +65,7 @@ function LeftPanel({ activeIndex }: { activeIndex: number }) {
   
 
   return (
-    <div className="sticky top-24 h-[70vh] flex flex-col justify-start pt-10 px-10">
+    <div className="sticky top-20 sm:top-24 h-[70vh] sm:h-[80vh] flex flex-col justify-start pt-8 sm:pt-10 px-4 sm:px-6 lg:px-10">
       <AnimatePresence mode="wait">
        <motion.div
   key={project.id}
@@ -95,25 +75,25 @@ function LeftPanel({ activeIndex }: { activeIndex: number }) {
   transition={{ duration: 0.4 }}
 >
   {/* TITLE */}
-  <h3 className={`${playfair.className} text-3xl italic font-semibold text-white tracking-tight mb-4`}>
+  <h3 className={`${playfair.className} text-2xl sm:text-3xl italic font-semibold text-white tracking-tight mb-3 sm:mb-4`}>
   {project.title}
 </h3>
   {/* DESCRIPTION */}
-  <p className="text-gray-400 text-[13px] leading-7 max-w-xl mb-6">
+  <p className="text-gray-400 text-[12px] sm:text-[13px] leading-6 sm:leading-7 max-w-xl mb-4 sm:mb-6">
     🚀 {project.desc}
   </p>
 
 
 
   {/* TECH STACK */}
-  <div className="flex flex-wrap gap-3">
+  <div className="flex flex-wrap gap-2 sm:gap-3">
     {project.tech?.map((t: any, i: number) => (
       <div
         key={i}
-        className="flex items-center gap-2 px-3 py-1.5 rounded-full 
-bg-[#111] border border-white/10 
-text-xs text-gray-300 
-hover:bg-white/10 hover:border-white/20 
+        className="flex items-center gap-1.5 sm:gap-2 px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-full
+bg-[#111] border border-white/10
+text-[10px] sm:text-xs text-gray-300
+hover:bg-white/10 hover:border-white/20
 transition-all duration-300"
       >
         <span>{t.icon}</span>
@@ -164,31 +144,31 @@ function ProjectCard({
     <motion.div
       ref={ref}
       style={{ scale, y }}
-      className="h-[70vh] flex items-center justify-center"
+      className="h-[70vh] sm:h-[75vh] lg:h-[80vh] flex items-center justify-center"
     >
-      <div className="flex gap-6 items-center">
+      <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 items-center w-full px-4 sm:px-0">
 
         {/* SMALL CARDS */}
-        <div className="flex flex-col gap-6">
+        <div className="flex flex-col gap-4 sm:gap-6 w-full sm:w-[200px] sm:flex-shrink-0">
   {project.images?.slice(0, 2).map((img: string, i: number) => (
     <img
       key={i}
       src={img}
       alt="project"
-      className="w-[240px] h-[140px] object-cover rounded-2xl"
+      className="w-full h-[120px] sm:h-[140px] object-cover rounded-xl sm:rounded-2xl"
     />
   ))}
 </div>
 
         {/* BIG CARD */}
-        <div className="relative w-[400px] h-[200px]">
+        <div className="relative w-full sm:w-[320px] sm:flex-shrink-0 h-[180px] sm:h-[200px]">
   <img
     src={project.images?.[2]}
     alt="project main"
-    className="w-full h-full object-cover rounded-2xl"
+    className="w-full h-full object-cover rounded-xl sm:rounded-2xl"
   />
 
-  <div className="absolute -top-10 -right-10">
+  <div className="absolute -top-8 -right-8 sm:-top-10 sm:-right-10">
     <RotatingBadge link={project.link} />
   </div>
 </div>
@@ -203,15 +183,15 @@ export default function Showcase() {
   const activeIndex = projects.findIndex((p) => p.id === activeId);
 
   return (
-    <section className="relative bg-black h-full">
+    <section className="relative bg-black h-full py-12 sm:py-16">
 
       {/* HEADING */}
-      <div className="text-center mb-12 pt-12">
-        <p className="text-xs tracking-widest text-gray-300 mb-4">
+      <div className="text-center mb-8 sm:mb-12 pt-8 sm:pt-12 px-4 sm:px-6">
+        <p className="text-[10px] sm:text-xs tracking-widest text-gray-300 mb-3 sm:mb-4">
           CRAFTING MODERN EXPERIENCES
         </p>
 
-        <h2 className="text-5xl md:text-7xl font-bold">
+        <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold">
           <span className="text-white">VENTURE </span>
           <span className="bg-gradient-to-r from-gray-600 via-gray-400 to-gray-700 text-transparent bg-clip-text italic">
             SHOWCASE
@@ -219,7 +199,7 @@ export default function Showcase() {
         </h2>
       </div>
 
-      <div className="flex min-h-screen">
+      <div className="flex flex-col lg:flex-row min-h-[calc(100vh-200px)]">
 
         {/* LEFT */}
         <div className="hidden lg:block w-[45%]">
@@ -227,7 +207,7 @@ export default function Showcase() {
         </div>
 
         {/* RIGHT */}
-        <div className="w-full lg:w-[55%] px-6 py-16 flex flex-col gap-16">
+        <div className="w-full lg:w-[55%] px-4 sm:px-6 py-8 sm:py-16 flex flex-col gap-12 sm:gap-16">
           {projects.map((project) => (
             <ProjectCard
               key={project.id}

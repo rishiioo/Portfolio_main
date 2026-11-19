@@ -94,35 +94,42 @@ function LeftPanel({ activeIndex }: { activeIndex: number }) {
   const project = projects[activeIndex];
 
   return (
-    <div className="sticky top-24 h-[70vh] flex flex-col justify-start pt-10 px-10">
+    <div className="sticky top-20 sm:top-24 h-[70vh] sm:h-[80vh] flex flex-col justify-start pt-8 sm:pt-10 px-4 sm:px-6 lg:px-10">
       <AnimatePresence mode="wait">
-        <motion.div
-          key={project.id}
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: -30 }}
-          transition={{ duration: 0.4 }}
-        >
-         <h3 className={`${playfair.className} text-3xl italic font-semibold text-white tracking-tight mb-4`}>
+       <motion.div
+  key={project.id}
+  initial={{ opacity: 0, y: 30 }}
+  animate={{ opacity: 1, y: 0 }}
+  exit={{ opacity: 0, y: -30 }}
+  transition={{ duration: 0.4 }}
+>
+  {/* TITLE */}
+  <h3 className={`${playfair.className} text-2xl sm:text-3xl italic font-semibold text-white tracking-tight mb-3 sm:mb-4`}>
   {project.title}
 </h3>
+  {/* DESCRIPTION */}
+  <p className="text-gray-400 text-[12px] sm:text-[13px] leading-6 sm:leading-7 max-w-xl mb-4 sm:mb-6">
+    🚀 {project.desc}
+  </p>
 
-          <p className="text-gray-400 text-[13px] leading-7 max-w-xl mb-6">
-            🚀 {project.desc}
-          </p>
 
-          <div className="flex flex-wrap gap-3">
-            {project.tech?.map((t: any, i: number) => (
-              <div
-                key={i}
-                className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#111] border border-white/10 text-xs text-gray-300 hover:bg-white/10 transition"
-              >
-                {t.icon}
-                {t.name}
-              </div>
-            ))}
-          </div>
-        </motion.div>
+  {/* TECH STACK */}
+  <div className="flex flex-wrap gap-2 sm:gap-3">
+    {project.tech?.map((t: any, i: number) => (
+      <div
+        key={i}
+        className="flex items-center gap-1.5 sm:gap-2 px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-full
+bg-[#111] border border-white/10
+text-[10px] sm:text-xs text-gray-300
+hover:bg-white/10 hover:border-white/20
+transition-all duration-300"
+      >
+        <span>{t.icon}</span>
+        {t.name}
+      </div>
+    ))}
+  </div>
+</motion.div>
       </AnimatePresence>
     </div>
   );
@@ -156,28 +163,34 @@ function ProjectCard({ project, onVisible }: any) {
     <motion.div
       ref={ref}
       style={{ scale, y }}
-      className="h-[70vh] flex items-center justify-center"
+      className="h-[70vh] sm:h-[75vh] lg:h-[80vh] flex items-center justify-center"
     >
-      <div className="flex gap-6 items-center">
-        <div className="flex flex-col gap-6">
-          {project.images.slice(0, 2).map((img: string, i: number) => (
-            <img
-              key={i}
-              src={img}
-              className="w-[240px] h-[140px] object-cover rounded-2xl"
-            />
-          ))}
-        </div>
+      <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 items-center w-full px-4 sm:px-0">
 
-        <div className="relative w-[400px] h-[200px]">
-          <img
-            src={project.images[2]}
-            className="w-full h-full object-cover rounded-2xl"
-          />
-          <div className="absolute -top-10 -right-10">
-            <RotatingBadge link={project.link} />
-          </div>
-        </div>
+        {/* SMALL CARDS */}
+        <div className="flex flex-col gap-4 sm:gap-6 w-full sm:w-[200px] sm:flex-shrink-0">
+  {project.images.slice(0, 2).map((img: string, i: number) => (
+    <img
+      key={i}
+      src={img}
+      alt="project"
+      className="w-full h-[120px] sm:h-[140px] object-cover rounded-xl sm:rounded-2xl"
+    />
+  ))}
+</div>
+
+        {/* BIG CARD */}
+        <div className="relative w-full sm:w-[320px] sm:flex-shrink-0 h-[180px] sm:h-[200px]">
+  <img
+    src={project.images[2]}
+    alt="project main"
+    className="w-full h-full object-cover rounded-xl sm:rounded-2xl"
+  />
+
+  <div className="absolute -top-8 -right-8 sm:-top-10 sm:-right-10">
+    <RotatingBadge link={project.link} />
+  </div>
+</div>
       </div>
     </motion.div>
   );
@@ -189,13 +202,31 @@ export default function Showcase() {
   const activeIndex = projects.findIndex((p) => p.id === activeId);
 
   return (
-    <section className="relative bg-black h-full">
-      <div className="flex min-h-screen">
+    <section className="relative bg-black h-full py-12 sm:py-16">
+
+      {/* HEADING */}
+      <div className="text-center mb-8 sm:mb-12 pt-8 sm:pt-12 px-4 sm:px-6">
+        <p className="text-[10px] sm:text-xs tracking-widest text-gray-300 mb-3 sm:mb-4">
+          CRAFTING MODERN EXPERIENCES
+        </p>
+
+        <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold">
+          <span className="text-white">VENTURE </span>
+          <span className="bg-gradient-to-r from-gray-600 via-gray-400 to-gray-700 text-transparent bg-clip-text italic">
+            SHOWCASE
+          </span>
+        </h2>
+      </div>
+
+      <div className="flex flex-col lg:flex-row min-h-[calc(100vh-200px)]">
+
+        {/* LEFT */}
         <div className="hidden lg:block w-[45%]">
           <LeftPanel activeIndex={activeIndex} />
         </div>
 
-        <div className="w-full lg:w-[55%] px-6 py-16 flex flex-col gap-16">
+        {/* RIGHT */}
+        <div className="w-full lg:w-[55%] px-4 sm:px-6 py-8 sm:py-16 flex flex-col gap-12 sm:gap-16">
           {projects.map((project) => (
             <ProjectCard
               key={project.id}
@@ -204,6 +235,7 @@ export default function Showcase() {
             />
           ))}
         </div>
+
       </div>
     </section>
   );

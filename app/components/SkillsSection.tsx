@@ -167,6 +167,7 @@ export default function SkillsSection() {
     background: "linear-gradient(to bottom, #0a0a0a, #111111, #0a0a0a)",
     borderRadius: "24px",
     margin: "",
+    maxWidth: "100vw",
   }}
 >
           {/* Atmospheric background radial */}
@@ -206,7 +207,8 @@ export default function SkillsSection() {
               justifyContent: "center",
               height: "100%",
               gap: 0,
-              padding: "0 24px",
+              padding: "0 16px",
+              maxWidth: "100vw",
             }}
           >
             {/* Heading */}
@@ -218,7 +220,7 @@ export default function SkillsSection() {
                 style={{
                   margin: "0 0 12px",
                   fontFamily: "'DM Sans', sans-serif",
-                  fontSize: "11px",
+                  fontSize: "clamp(9px, 1.5vw, 11px)",
                   fontWeight: 500,
                   letterSpacing: "0.38em",
                   textTransform: "uppercase",
@@ -231,7 +233,7 @@ export default function SkillsSection() {
                 style={{
                   margin: 0,
                   fontFamily: "'Syne', sans-serif",
-                  fontSize: "clamp(44px, 7vw, 76px)",
+                  fontSize: "clamp(32px, 7vw, 76px)",
                   fontWeight: 900,
                   lineHeight: 1.05,
                   letterSpacing: "-0.02em",
@@ -246,8 +248,8 @@ export default function SkillsSection() {
             <div
               style={{
                 position: "relative",
-                width: "min(400px, 82vw)",
-                height: "min(400px, 52vh)",
+                width: "min(360px, 85vw)",
+                height: "min(360px, 50vh)",
                 marginTop: "-8px",
                 marginBottom: "-8px",
                 zIndex: 10,
@@ -269,8 +271,8 @@ export default function SkillsSection() {
                   bottom: "8%",
                   left: "50%",
                   transform: "translateX(-50%)",
-                  width: "180px",
-                  height: "30px",
+                  width: "clamp(120px, 30vw, 180px)",
+                  height: "clamp(20px, 5vw, 30px)",
                   background:
                     "radial-gradient(ellipse, rgba(90,110,255,0.3) 0%, transparent 72%)",
                   filter: "blur(12px)",
@@ -288,8 +290,9 @@ export default function SkillsSection() {
                   display: "flex",
                   flexWrap: "wrap",
                   justifyContent: "center",
-                  gap: "10px",
-                  maxWidth: "640px",
+                  gap: "clamp(6px, 1.5vw, 10px)",
+                  maxWidth: "100%",
+                  padding: "0 8px",
                 }}
               >
                 {SKILLS.map((skill, i) => (

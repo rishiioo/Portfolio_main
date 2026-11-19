@@ -9,15 +9,15 @@ import { FaSpotify } from "react-icons/fa";
 export default function BehindSection() {
   const router = useRouter();
   return (
-    <section className="bg-black text-white py-32 px-6 md:px-16">
+    <section className="bg-black text-white py-16 sm:py-24 lg:py-32 px-4 sm:px-6 md:px-10 lg:px-16">
 
       {/* HEADING */}
-      <div className="text-center mb-20">
-        <p className="text-xs tracking-[0.3em] text-white/50 mb-4">
+      <div className="text-center mb-12 sm:mb-16 lg:mb-20">
+        <p className="text-[10px] sm:text-xs tracking-[0.3em] text-white/50 mb-3 sm:mb-4">
           BEHIND THE CURTAINS
         </p>
 
-        <h2 className="text-[42px] md:text-[64px] font-semibold leading-tight">
+        <h2 className="text-[28px] sm:text-[36px] md:text-[42px] lg:text-[52px] xl:text-[64px] font-semibold leading-tight">
           Decoding logic <br />
           <span className="font-serif italic bg-gradient-to-r from-gray-600 via-gray-400 to-gray-700 text-transparent bg-clip-text">
             && the lyrics
@@ -26,67 +26,70 @@ export default function BehindSection() {
       </div>
 
       {/* GRID */}
-      <div className="grid md:grid-cols-3 gap-6">
+      <div className="grid sm:grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
 
         {/* 🔥 LEFT CARD (GITHUB) */}
-        <div className="bg-[#0b0b0b] border border-white/10 rounded-2xl p-6 flex flex-col justify-between hover:border-white/20 transition">
+        <div className="bg-[#0b0b0b] border border-white/10 rounded-2xl p-4 sm:p-6 flex flex-col justify-between hover:border-white/20 transition min-h-[320px] sm:min-h-[360px]">
 
           <div>
-            <h3 className="text-lg font-semibold mb-6">
+            <h3 className="text-base sm:text-lg font-semibold mb-4 sm:mb-6">
               Rishi's Github
             </h3>
 
-            <p className="text-xs text-white/50 mb-2">
+            <p className="text-[10px] sm:text-xs text-white/50 mb-2">
               LATEST PUSH • 1h ago
             </p>
 
-            <p className="text-white/80 text-sm">
+            <p className="text-white/80 text-[12px] sm:text-sm">
               "Refactor code structure for improved readability and maintainability"
             </p>
 
-            <p className="text-xs text-red-400 mt-2">
+            <p className="text-[10px] sm:text-xs text-red-400 mt-2">
               Repo: Private work
             </p>
           </div>
 
           {/* SOCIAL ICONS */}
-          <div className="flex gap-4 mt-6 text-white/60 text-lg">
+          <div className="flex gap-3 sm:gap-4 mt-4 sm:mt-6 text-white/60 text-base sm:text-lg">
             <a 
     href="https://github.com/rishiioo"
     target="_blank" 
     rel="noopener noreferrer"
     className="hover:text-white transition"
+      aria-label="GitHub"
   >
 <FaGithub /></a>
-            <a 
+            <a
     href="https://linkedin.com/in/rishi-singh-b286q2359"
-    target="_blank" 
+    target="_blank"
     rel="noopener noreferrer"
     className="hover:text-white transition"
+      aria-label="LinkedIn"
   >
 <FaLinkedin /></a>
-            <a 
+            <a
     href="https://x.com/rishiioo"
-    target="_blank" 
+    target="_blank"
     rel="noopener noreferrer"
     className="hover:text-white transition"
+      aria-label="Twitter"
   >
 <FaTwitter /></a>
           </div>
         </div>
 
         {/* 🔥 CENTER CARD */}
-        <div className="relative bg-[#0b0b0b] border border-white/10 rounded-2xl p-8 flex flex-col justify-between overflow-hidden hover:border-white/20 transition">
+        <div className="relative bg-[#0b0b0b] border border-white/10 rounded-2xl p-4 sm:p-6 lg:p-8 flex flex-col justify-between overflow-hidden hover:border-white/20 transition min-h-[320px] sm:min-h-[360px]">
 
           {/* glow */}
-          <div className="absolute bottom-0 right-0 w-40 h-40 bg-orange-500/20 blur-3xl pointer-events-none" />
+          <div className="absolute bottom-0 right-0 w-32 sm:w-40 h-32 sm:h-40 bg-orange-500/20 blur-3xl pointer-events-none" />
 
           <div>
-            <p className="text-xs text-white/50 tracking-widest mb-4">
+            <p className="text-[10px] sm:text-xs text-white/50 tracking-widest mb-3 sm:mb-4">
               VISITORS
             </p>
 
-            <h3 className="text-3xl font-semibold leading-tight">
+            <h3 className="text-xl sm:text-2xl lg:text-3xl font-semibold leading-tight">
               Leave your{" "}
               <span className="font-serif italic bg-gradient-to-r from-gray-600 via-gray-400 to-gray-700 text-transparent bg-clip-text">
                 signature

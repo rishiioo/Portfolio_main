@@ -6,24 +6,24 @@ import ImageStack from "../components/ImageStack";
 
 export default function AboutContent() {
   return (
-    <section className="w-full bg-black text-white px-6 md:px-15 pt-10 pb-20">
+    <section className="w-full bg-black text-white px-4 sm:px-6 md:px-10 lg:px-15 pt-10 sm:pt-16 pb-16 sm:pb-20">
 
-      <div className="max-w-[1400px] mx-auto grid md:grid-cols-[1.2fr_0.8fr] gap-15 items-center">
+      <div className="max-w-[1400px] mx-auto grid md:grid-cols-[1.2fr_0.8fr] gap-8 sm:gap-12 lg:gap-15 items-start">
 
         {/* LEFT SIDE */}
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7 }}
-          className="space-y-8"
+          className="space-y-6 sm:space-y-8"
         >
           {/* SMALL LABEL */}
-          <p className="text-[11px] tracking-[0.3em] uppercase text-zinc-500">
+          <p className="text-[10px] sm:text-[11px] tracking-[0.3em] uppercase text-zinc-500">
             A LITTLE ABOUT ME
           </p>
 
           {/* HEADING */}
-          <h2 className="text-[56px] md:text-[48px] font-semibold leading-[1.05] tracking-tight">
+          <h2 className="text-[36px] sm:text-[42px] md:text-[48px] lg:text-[56px] font-semibold leading-[1.05] tracking-tight">
             Nice to meet you.
             <br />
             I'm{" "}
@@ -33,22 +33,22 @@ export default function AboutContent() {
           </h2>
 
           {/* TEXT */}
-          <div className="space-y-6 max-w-xl">
-            <p className="text-gray-400 text-[14px] leading-relaxed">
+          <div className="space-y-4 sm:space-y-6 max-w-xl">
+            <p className="text-gray-400 text-[13px] sm:text-[14px] leading-relaxed">
               I'm a BSc Computer Science student and full-stack developer who
               builds and deploys web applications using React.js, Next.js,
               Node.js, Express.js, and MongoDB. Experienced in REST API
               development, database integration, and LLM (Gemini) integration.
             </p>
 
-            <p className="text-gray-400 text-[14px] leading-relaxed">
+            <p className="text-gray-400 text-[13px] sm:text-[14px] leading-relaxed">
               I deploy frontend and backend services to Vercel and Render, with
               a strong foundation in Data Structures & Algorithms (practiced in
               C++) and Object-Oriented Programming, plus Git-based version
               control and Docker fundamentals.
             </p>
 
-            <p className="text-gray-400 text-[14px] leading-relaxed">
+            <p className="text-gray-400 text-[13px] sm:text-[14px] leading-relaxed">
               My philosophy is simple: build things that last. I help startups
               and businesses bridge the gap between concept and reality with
               code that performs.
@@ -56,11 +56,10 @@ export default function AboutContent() {
           </div>
 
          {/* SOCIAL + BUTTON */}
-<div className="pt-4 flex flex-col gap-6">
+<div className="pt-4 flex flex-col sm:flex-row gap-6 items-center sm:items-start justify-center sm:justify-start">
 
   {/* SOCIAL ICONS */}
-   {/* SOCIAL ICONS */}
-            <div className="flex justify-center gap-6 text-gray-400">
+            <div className="flex justify-center gap-5 sm:gap-6 text-gray-400">
 
               {/* LinkedIn */}
               <a 

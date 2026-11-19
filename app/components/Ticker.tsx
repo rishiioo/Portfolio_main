@@ -15,20 +15,20 @@ const items = [
 function TopRibbon() {
   return (
     <div className="absolute w-[140%] left-[-20%] rotate-[-5deg] z-20">
-      
+
       {/* GLOW */}
       <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-        <div className="w-full h-24 bg-red-500/40 blur-3xl opacity-60" />
+        <div className="w-full h-16 sm:h-20 md:h-24 bg-red-500/40 blur-3xl opacity-60" />
       </div>
 
       {/* MAIN STRIP */}
       <div className="overflow-hidden">
-  <div className="ticker-track flex gap-12 bg-red-600 py-4 px-8 text-white font-semibold whitespace-nowrap shadow-[0_10px_40px_rgba(255,0,0,0.6)]">
-    
+  <div className="ticker-track flex gap-8 sm:gap-10 md:gap-12 bg-red-600 py-3 sm:py-4 px-6 sm:px-8 text-white font-semibold whitespace-nowrap shadow-[0_10px_40px_rgba(255,0,0,0.6)]">
+
     {/* FIRST COPY */}
-    <div className="flex gap-12">
+    <div className="flex gap-8 sm:gap-10 md:gap-12">
       {items.map((item, i) => (
-        <span key={i} className="flex items-center gap-4 text-lg">
+        <span key={i} className="flex items-center gap-2 sm:gap-3 md:gap-4 text-sm sm:text-base md:text-lg">
           {item}
           <span className="text-white/70">✦</span>
         </span>
@@ -36,9 +36,9 @@ function TopRibbon() {
     </div>
 
     {/* SECOND COPY */}
-    <div className="flex gap-12">
+    <div className="flex gap-8 sm:gap-10 md:gap-12">
       {items.map((item, i) => (
-        <span key={i} className="flex items-center gap-4 text-lg">
+        <span key={i} className="flex items-center gap-2 sm:gap-3 md:gap-4 text-sm sm:text-base md:text-lg">
           {item}
           <span className="text-white/70">✦</span>
         </span>
@@ -56,7 +56,7 @@ function BottomRibbon() {
     <div className="absolute w-[140%] left-[-20%] rotate-[5deg] z-10">
 
       {/* 🔥 SOLID SHADOW RIBBON (NO BLUR, NO TEXT) */}
-      <div className="w-full py-6 px-8 bg-gradient-to-r from-red-900 via-red-800 to-red-900 opacity-80 shadow-[0_10px_40px_rgba(255,0,0,0.3)]" />
+      <div className="w-full py-4 sm:py-5 md:py-6 px-6 sm:px-8 bg-gradient-to-r from-red-900 via-red-800 to-red-900 opacity-80 shadow-[0_10px_40px_rgba(255,0,0,0.3)]" />
 
     </div>
   );
@@ -64,7 +64,7 @@ function BottomRibbon() {
 
 export default function Ticker() {
   return (
-    <div className="relative overflow-hidden py-29 bg-black">
+    <div className="relative overflow-hidden py-16 sm:py-20 md:py-24 lg:py-29 bg-black">
 
       {/* TOP */}
       <TopRibbon />
