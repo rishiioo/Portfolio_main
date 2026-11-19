@@ -291,7 +291,8 @@ export default function SkillsSection() {
                   flexWrap: "wrap",
                   justifyContent: "center",
                   gap: "clamp(6px, 1.5vw, 10px)",
-                  maxWidth: "100%",
+                  maxWidth: "min(720px, 92vw)",
+                  margin: "0 auto",
                   padding: "0 8px",
                 }}
               >
