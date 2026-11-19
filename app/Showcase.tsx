@@ -57,6 +57,23 @@ const projects = [
       { name: "Firebase", icon: <SiFirebase className="text-yellow-500" /> },
     ],
   },
+  {
+    id: 3,
+    title: " Muscura",
+    link: "https://github.com/rishiioo/Muscura",
+    desc: "Muscura is a practical full-stack gym and fitness management platform. Its scope includes gym subscription tracking, workout planning, and fitness-related features.",
+    gradient: "from-yellow-500 to-orange-500",
+    images: [
+      "/projects/cvforge1.png",
+      "/projects/cvforge2.png",
+      "/projects/cvforge3.png",
+    ],
+    tech: [
+      { name: "React", icon: <FaReact className="text-blue-400" /> },
+      { name: "Node.js", icon: <SiNodedotjs className="text-green-500" /> },
+      { name: "MongoDB", icon: <SiMongodb className="text-green-400" /> },
+    ],
+  },
 ];
 
 // ─── LEFT PANEL ───────────────────────────────────────
